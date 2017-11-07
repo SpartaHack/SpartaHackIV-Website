@@ -1,0 +1,53 @@
+<div class="row">
+	<section id="home">
+    <div class="medium-2 small-3 column snowflake-1" [@snowflakeIn1]="">
+        <img src="assets/images/snowflake_thick.svg">
+    </div>
+    <div class="medium-1 show-for-medium column snowflake-2" [@snowflakeIn2]="">
+            <img src="assets/images/snowflake.svg">
+        </div>
+
+	<div class="medium-6 small-6 column logo" [@logoIn]="">
+		<img src="assets/images/logo.svg">
+      </div>
+    <div class="medium-2 small-3 column snowflake-3" [@snowflakeIn3]="">
+        <img src="assets/images/snowflake.svg">
+    </div>
+    <div class="medium-1 show-for-medium column snowflake-4" [@snowflakeIn4]="">
+            <img src="assets/images/snowflake.svg">
+        </div>
+    <div class="medium-2 small-2 column snowflake-5" [@snowflakeIn5]="">
+        <img src="assets/images/snowflake_thick.svg">
+    </div> 
+    
+	</section>
+	</div>
+	
+	<div class="row">
+	<div class="small-8 small-offset-2 column" [@textIn]="">
+		<p style="text-align:center;">January 19-21, 2018 - Michigan State University</p>
+		  <p style="text-align:center;">Registration is coming soon, sign up for email alerts below!</p>
+	</div>
+</div>
+
+<div class="row">
+    <section id="mail">
+    	<!-- MailChimp Sign Up -->
+        <div id="mc_embed_signup" class="small-8 small-offset-2 subscriber" (click)="OnSignUpClick()" [@mailButtonIn]="">
+            <p class="subscriber-before" *ngIf="!signingUp">
+                Add me to the mailing list!
+            </p>
+            <form *ngIf="signingUp" ngNoForm [@mailState]="mailState"
+                  action="https://spartahack.us9.list-manage.com/subscribe/post?u=03bbf4682a83a01eb78a6f8ae&amp;id=2b16d9c55f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                <label for="mce-EMAIL">Subscribe to our mailing list</label>
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" class="email" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_03bbf4682a83a01eb78a6f8ae_2b16d9c55f" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+            </form>
+        </div>
+    	<!--End mc_embed_signup-->
+    </section>
+</div>

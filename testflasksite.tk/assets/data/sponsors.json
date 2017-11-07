@@ -1,0 +1,137 @@
+﻿[
+ {
+   "id": 1,
+   "company": "IBM",
+   "logoURL": "assets/images/logos/IBM.svg"
+ },
+ {
+   "id": 2,
+   "company": "QuickenLoans",
+   "logoURL": "assets/images/logos/Quicken-Loans.svg"
+ },
+ {
+   "id": 3,
+   "company": "Delphi",
+   "logoURL": "assets/images/logos/Delphi.svg"
+ },
+ {
+   "id": 4,
+   "company": "ThoughtWorks",
+   "logoURL": "assets/images/logos/ThoughtWorks.svg"
+ },
+ {
+   "id": 5,
+   "company": "Amazon Alexa",
+   "logoURL": "assets/images/logos/Amazon-Alexa.svg"
+ },
+ {
+   "id": 6,
+   "company": "Auto-Owners Insurance",
+   "logoURL": "assets/images/logos/Auto-Owners.svg"
+ },
+ {
+   "id": 7,
+   "company": "Blue Medora",
+   "logoURL": "assets/images/logos/Blue-Medora.svg"
+ },
+ {
+   "id": 8,
+   "company": "Crowe Horwath",
+   "logoURL": "assets/images/logos/Crowe-Horwath.svg"
+ },
+ {
+   "id": 9,
+   "company": "Cycle",
+   "logoURL": "assets/images/logos/Cycle.svg"
+ },
+ {
+   "id": 10,
+   "company": "DTMB",
+   "logoURL": "assets/images/logos/DTMB.svg"
+ },
+ {
+   "id": 11,
+   "company": "MSU Undergraduate Entrepreneurship",
+   "logoURL": "assets/images/logos/Entrepreneurship-Programs-at-MSU.svg"
+ },
+ {
+   "id": 12,
+   "company": "Ford",
+   "logoURL": "assets/images/logos/Ford.svg"
+ },
+ {
+   "id": 13,
+   "company": "LegalRnD",
+   "logoURL": "assets/images/logos/Legal-RND.svg"
+ },
+ {
+   "id": 14,
+   "company": "MSU Computer Science",
+   "logoURL": "assets/images/logos/MSU-Department-of-Computer-Science-and-Engineering.svg"
+ },
+ {
+   "id": 15,
+   "company": "MSU IT",
+   "logoURL": "assets/images/logos/MSU-IT-Services.svg"
+ },
+ {
+   "id": 16,
+   "company": "MSU MSBA",
+   "logoURL": "assets/images/logos/MSU_MSBA.svg"
+ },
+ {
+   "id": 17,
+   "company": "MSUFCU",
+   "logoURL": "assets/images/logos/MSUFCU.svg"
+ },
+ {
+   "id": 18,
+   "company": "TechSmith",
+   "logoURL": "assets/images/logos/Techsmith.svg"
+ },
+ {
+   "id": 19,
+   "company": "X-Keys",
+   "logoURL": "assets/images/logos/X-Keys.svg"
+ },
+ {
+   "id": 20,
+   "company": "Clarifai",
+   "logoURL": "assets/images/logos/Clarifai.svg"
+ },
+ {
+  "id": 21,
+  "company": "DigitalOcean",
+  "logoURL": "assets/images/logos/Digital-Ocean.svg"
+},
+{
+  "id": 22,
+  "company": "Google",
+  "logoURL": "assets/images/logos/Google.svg"
+},
+{
+  "id": 23,
+  "company": "Kloudless",
+  "logoURL": "assets/images/logos/Kloudless.svg"
+},
+{
+  "id": 24,
+  "company": "MLH",
+  "logoURL": "assets/images/logos/MLH.svg"
+},
+{
+  "id": 25,
+  "company": "SendGrid",
+  "logoURL": "assets/images/logos/SendGrid.svg"
+},
+{
+  "id": 26,
+  "company": "Spartan Innovations",
+  "logoURL": "assets/images/logos/Spartan-Innovations.svg"
+},
+{
+  "id": 27,
+  "company": "Wolfram Language",
+  "logoURL": "assets/images/logos/Wolfram.svg"
+}
+]

@@ -1,0 +1,222 @@
+﻿[
+ {
+   "id": 14,
+   "question": "What is SpartaHack?",
+   "answer": "SpartaHack is a 36-hour programming marathon and competition held at Michigan State University on the weekend of January 20th-22nd. We provide tons of meals, snacks, nap spaces, and swag, free of cost so all you need to worry about is making something cool.",
+   "user_id": 9,
+   "created_at": "2016-11-10 05:06:37.207397",
+   "updated_at": "2016-11-10 05:06:37.207397",
+   "display": "t",
+   "priority": 1,
+   "placement": "home"
+ },
+ {
+   "id": 24,
+   "question": "When will SpartaHack begin and end?",
+   "answer": "SpartaHack check-in will begin at 6:00pm Eastern time on Friday, January 20, 2017. Our opening ceremony will begin that evening at 9:00pm, and our closing ceremony is scheduled to end Sunday, January 22, at 6:00pm.",
+   "user_id": 10,
+   "created_at": "2016-12-19 03:28:09.217329",
+   "updated_at": "2016-12-19 03:28:09.217329",
+   "display": "t",
+   "priority": 2,
+   "placement": "home"
+ },
+ {
+   "id": 22,
+   "question": "I have a question that isn’t in this list!",
+   "answer": "Reach out to us at <a href=\"mailto:hello@spartahack.com\">hello@spartahack.com</a> and we’ll get back to you.",
+   "user_id": 10,
+   "created_at": "2016-11-10 05:10:11.159624",
+   "updated_at": "2016-12-28 20:04:24.311327",
+   "display": "t",
+   "priority": 23,
+   "placement": "home"
+ },
+ {
+   "id": 17,
+   "question": "Who can come to SpartaHack?",
+   "answer": "Anyone who is currently a student or has graduated within 12 months of SpartaHack! Graduate students, undergrads, and high-school students from any field of study are welcome.",
+   "user_id": 10,
+   "created_at": "2016-11-10 05:07:45.524951",
+   "updated_at": "2016-12-28 20:03:20.84666",
+   "display": "t",
+   "priority": 5,
+   "placement": "home"
+ },
+ {
+   "id": 21,
+   "question": "Do you have a Code of Conduct?",
+   "answer": "Yes! As an MLH member event, all attendees must agree to the <a target=\"_blank\" href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'>MLH Code of Conduct</a>",
+   "user_id": 10,
+   "created_at": "2016-11-10 05:09:32.947282",
+   "updated_at": "2016-12-28 20:05:09.749343",
+   "display": "t",
+   "priority": 22,
+   "placement": "home"
+ },
+ {
+   "id": 28,
+   "question": "What if I missed check-in?",
+   "answer": "Never fear! You can check in any time at our Help Desk in A136.",
+   "user_id": 10,
+   "created_at": "2017-01-19 11:05:09.103487",
+   "updated_at": "2017-01-19 11:05:09.103487",
+   "display": "t",
+   "priority": 2,
+   "placement": "live"
+ },
+ {
+   "id": 29,
+   "question": "How do I redeem my travel reimbursement?",
+   "answer": "Check out our <a href=\"https://docs.google.com/spreadsheets/d/1vHI_z6UtO5_8mqLmt59l6g3koChKO78L0995Sl4TIBE\">travel policy</a>!<br><br>Note: Only attendees who RSVPed in advance and complete all of the steps outlined in this document are eligible for travel reimbursement.",
+   "user_id": 10,
+   "created_at": "2017-01-19 11:05:09.10442",
+   "updated_at": "2017-01-19 11:05:09.10442",
+   "display": "t",
+   "priority": 3,
+   "placement": "live"
+ },
+ {
+   "id": 30,
+   "question": "Where can I borrow hardware?",
+   "answer": "Come see us at our Help Desk on the first floor.",
+   "user_id": 10,
+   "created_at": "2017-01-19 11:05:09.105219",
+   "updated_at": "2017-01-19 11:05:09.105219",
+   "display": "t",
+   "priority": 4,
+   "placement": "live"
+ },
+ {
+   "id": 31,
+   "question": "How many students can be on a team?",
+   "answer": "Teams can have up to 4 students.",
+   "user_id": 10,
+   "created_at": "2017-01-19 11:05:09.106093",
+   "updated_at": "2017-01-19 11:05:09.106093",
+   "display": "t",
+   "priority": 5,
+   "placement": "live"
+ },
+ {
+   "id": 27,
+   "question": "Where can I park?",
+   "answer": "You can park in <a href=\"http://maps.msu.edu/interactive/index.php?location=DPLE\" target=\"_blank\">Ramp 5</a> <strong>except</strong> for spaces on the first floor, spaces with a pay-by-plate designation, or 24-hour reserved spaces.",
+   "user_id": 10,
+   "created_at": "2017-01-19 11:05:09.102493",
+   "updated_at": "2017-01-19 11:05:09.102493",
+   "display": "t",
+   "priority": 1,
+   "placement": "live"
+ },
+ {
+   "id": 15,
+   "question": "How do I sign up for SpartaHack?",
+   "answer": "Unfortnately, we have run out of space in our venue so we can no longer accept new registrations. Hopefully we can hack with you next year!",
+   "user_id": 10,
+   "created_at": "2016-11-10 05:07:12.616563",
+   "updated_at": "2016-12-28 20:02:58.213984",
+   "display": "t",
+   "priority": 4,
+   "placement": "home"
+ },
+ {
+   "id": 18,
+   "question": "What should I make at SpartaHack?",
+   "answer": "Whatever you want to! A lot of people use hackathons as an opportunity to learn a new piece of tech, while others work with tools they know already to build something more challenging. You can check out last year’s projects <a target=\"_blank\" href=\"https://spartahack2016.devpost.com/submissions\">here</a>.",
+   "user_id": 10,
+   "created_at": "2016-11-10 05:08:16.048663",
+   "updated_at": "2017-01-21 09:15:14.916006",
+   "display": "t",
+   "priority": 19,
+   "placement": "home"
+ },
+ {
+   "id": 19,
+   "question": "Can I work with a team at SpartaHack?",
+   "answer": "Sure! Teams can have up to 4 students.",
+   "user_id": 10,
+   "created_at": "2016-11-10 05:08:34.149778",
+   "updated_at": "2017-01-21 09:15:14.919094",
+   "display": "t",
+   "priority": 20,
+   "placement": "home"
+ },
+ {
+   "id": 16,
+   "question": "Do I need to know how to code to come to SpartaHack?",
+   "answer": "Definitely not! No programming experience is necessary; we have workshops and mentors at the event to help you learn about a variety of topics.",
+   "user_id": 10,
+   "created_at": "2016-11-10 05:07:28.629228",
+   "updated_at": "2017-01-21 09:15:14.92187",
+   "display": "t",
+   "priority": 17,
+   "placement": "home"
+ },
+ {
+   "id": 20,
+   "question": "Do you offer travel reimbursement?",
+   "answer": "Yes! Check out our <a href=\"https://docs.google.com/spreadsheets/d/1vHI_z6UtO5_8mqLmt59l6g3koChKO78L0995Sl4TIBE\">travel policy</a>!",
+   "user_id": 10,
+   "created_at": "2016-11-10 05:08:50.549911",
+   "updated_at": "2017-01-21 09:15:14.924677",
+   "display": "t",
+   "priority": 21,
+   "placement": "home"
+ },
+ {
+   "id": 25,
+   "question": "I heard you have a Starbucks at SpartaHack?",
+   "answer": "We do! There is a Starbucks located in our building (Wells Hall) and their hours are as follows:<br/>\n\nFriday 1/20: 7:00am-10:30pm<br/>\nSaturday 1/21: 7:00am-9:30pm<br/>\nSunday 1/22: 7:00am-9:30pm",
+   "user_id": 10,
+   "created_at": "2016-12-28 20:02:04.529465",
+   "updated_at": "2017-01-21 09:15:14.927798",
+   "display": "t",
+   "priority": 26,
+   "placement": "home"
+ },
+ {
+   "id": 33,
+   "question": "Do you have a Code of Conduct?",
+   "answer": "Yes! As an MLH member event, we require that all attendees agree to the <a href=\"https://static.mlh.io/docs/mlh-code-of-conduct.pdf\">MLH Code of Conduct</a>.",
+   "user_id": 10,
+   "created_at": "2017-01-19 11:05:09.107588",
+   "updated_at": "2017-01-21 09:15:14.930835",
+   "display": "t",
+   "priority": 34,
+   "placement": "live"
+ },
+ {
+   "id": 34,
+   "question": "I have other questions!",
+   "answer": "Send them our way at <a href=\"mailto:hello@spartahack.com\">hello@spartahack.com</a> or come see us at the Help Desk on the first floor!",
+   "user_id": 10,
+   "created_at": "2017-01-19 11:05:09.108435",
+   "updated_at": "2017-01-21 09:15:14.933456",
+   "display": "t",
+   "priority": 35,
+   "placement": "live"
+ },
+ {
+   "id": 32,
+   "question": "How does your mentorship system work?",
+   "answer": "Ask questions in the <a href=\"http://bit.ly/sh17mentor\">Mentorship Slack</a> or submit a request with the SpartaHack mobile app!",
+   "user_id": 11,
+   "created_at": "2017-01-19 11:05:09.106891",
+   "updated_at": "2017-01-21 09:18:28.087151",
+   "display": "t",
+   "priority": 6,
+   "placement": "live"
+ },
+ {
+   "id": 36,
+   "question": "Where can I find your opening ceremony slides? What is your judging procedure?",
+   "answer": "Opening ceremony slides can be found <a href=\"https://drive.google.com/open?id=1OUvEu8a0w54WpaV8czX6JTS62UtTdTCRnUcsyzq-NF8\">here</a> and they include an overview of our judging procedure!",
+   "user_id": null,
+   "created_at": "2017-01-21 16:02:31.15923",
+   "updated_at": "2017-01-21 16:02:31.15923",
+   "display": "t",
+   "priority": 7,
+   "placement": "live"
+ }
+]

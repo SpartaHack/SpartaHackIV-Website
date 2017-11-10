@@ -15,9 +15,6 @@ export class Sponsor {
 export class SponsorService {
 
   headers = new Headers({
-    // 'content-type': 'application/json',
-    // 'authorization': 'Token token=9ba5cc744d40feb58d0bc6bce7c8d8be',
-    // 'accept': 'vnd.example.v2'
     });
 
   constructor(private http: Http) { }

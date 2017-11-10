@@ -37,7 +37,14 @@ h2 {
 	padding: 2rem;
 	cursor: pointer;
 }
-.subscriber {
+.subscriber-after {
+	padding: 1rem;
+	color: white;
+}
+label {
+	color: white;
+}
+.blue-box {
 	background-color:#337291;
 	border-radius: 5px;
 	color: white;
@@ -58,9 +65,11 @@ virtual-scroll {
 .faq-question {
 	padding: 1rem;
 	border-bottom: 1px solid #CCCCCC;
+	height: 85px;
+	text-align: center;
 }
 .faq-question-active {
-	background-color: #FFFFFF;
+	background-color: #CCCCCC;
 }
 .faq-answer {
 	padding: 1rem;

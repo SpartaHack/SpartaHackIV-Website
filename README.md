@@ -3,10 +3,6 @@
 
 This is a guide for running a local copy of the SpartaHack Static Site at http://localhost:4200
 
-**Once set up, only Postgres.app and the rails server need to be on to run the site**
-    
-    rails server
-
 ### Installation
 
 ##### Get Node.js and npm

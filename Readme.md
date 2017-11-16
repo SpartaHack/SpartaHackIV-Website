@@ -14,7 +14,7 @@ Source the env using `source SpartaHackEnv/bin/activate`
 
 Install dependencies `pip3 install -r requirements.txt`
 
-###Running SpartaHack locally###
+### Running SpartaHack locally ###
 
 Navigate to the folder containing `run.py`
 
@@ -22,4 +22,8 @@ Run `python run.py`
 
 Navigate to `http://localhost:5000` to check the site
 
+
+#### Misc info ####
+
+Contact @yash for config files
 

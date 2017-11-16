@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpartaHack IV!</title>
+  </head>
+
+  <body>
+	<div class="navbar-nav">
+		<a class="nav-item nav-link active" href="#intro">SpartaHack IV </a>
+		<a class="nav-item nav-link active" href ="#home">18<a>
+		<a class="nav-item nav-link active" href ="#about">About<a>
+		<a class="nav-item nav-link active" href="#faq">FAQ </a>
+		<a class="nav-item nav-link active" href ="#sponsor">Sponsor</a>
+		<a class="nav-item nav-link active" href ="#contact">Contact</a>
+		<a class="nav-item nav-link active" href ="#about">About<a>
+		{%if logged_in %}
+			<a href ="/dashboard">My Dashboard<a>
+			<a href ="/log_out">Log Out<a>
+		{% else %}
+			<a href="/login">Login</a>
+			<a href="/application">Sign up</a>
+			
+		{%endif%}
+	</div>
+	<div id=#about>
+		SpartaHack IV is Michigan State University's fourth annual student-run hackathon. On the weekend of January 19th, we're bringing together 600 students of all skill levels and disciplines to get creative with tech, connect with peers and professionals, and forget the words "I can't." We're excited to see what you will create!
+	</div>
+  </body>
+</html>

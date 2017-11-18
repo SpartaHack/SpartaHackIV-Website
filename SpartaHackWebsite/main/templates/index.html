@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--  This is how you set up urls for static files. We can set that as a variable too if we want to change the theme in the future 
+	<script type = "text/javascript" src = "{{ url_for('static', filename = 'js_file_name.js') }}" ></script>-->
+		 
+<html>
+  <head>
+    <title>SpartaHack IV!</title>
+  </head>
+
+  <body>
+	<div class="navbar-nav">
+		<a class="nav-item nav-link active" href="#intro">SpartaHack IV </a>
+		<a class="nav-item nav-link active" href ="#home">18<a>
+		<a class="nav-item nav-link active" href ="#about">About<a>
+		<a class="nav-item nav-link active" href="#faq">FAQ </a>
+		<a class="nav-item nav-link active" href ="#sponsor">Sponsor</a>
+		<a class="nav-item nav-link active" href ="#contact">Contact</a>
+		<a class="nav-item nav-link active" href ="#about">About<a>
+		{%if logged_in %}
+			<a href ="/dashboard">My Dashboard<a>
+			<a href ="/log_out">Log Out<a>
+		{% else %}
+			<a href="/login">Login</a>
+			<a href="/application">Sign up</a>
+			
+		{%endif%}
+	</div>
+	<div id=#about>
+		SpartaHack IV is Michigan State University's fourth annual student-run hackathon. On the weekend of January 19th, we're bringing together 600 students of all skill levels and disciplines to get creative with tech, connect with peers and professionals, and forget the words "I can't." We're excited to see what you will create!
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id=#volunteer>
+		volunteer code from mail chimp
+	</div>
+	<br>
+	<br>
+	<br>
+	
+	<div id=#faq>
+		{% for faq in faqs%}
+			<li>{{faq[0]}} ---- {{faq[1]|safe}}</li>
+		{%endfor%}
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id=#sponsors>
+		Sponsors of SpartaHack have the unique ability to connect with 500 student developers in a long-term, project-based setting. This is an unparalleled opportunity to work with coveted potential hires, reinforce company branding in the tight-knit hacker community, and contribute to the innovation of tech education.<br>
+		
+		{% for sponsor in sponsors%}
+			<!--<a href={{sponsor['sponsor_url']}}><img src={{sponsor['logo_url']}}></a><br>-->
+		{%endfor%}
+	
+	
+	
+  </body>
+</html>

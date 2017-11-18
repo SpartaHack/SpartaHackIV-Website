@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpartaHack IV</title>
+  </head>
+  <body>
+    <h2>Log in</h2>
+		<form method="post">
+			<table>
+				<tr>
+					<td class="lable">
+						Email: <input type="text" name="email" value="{{email}}">
+					</td>
+					
+				</tr>
+				<!-- <tr> -->
+					<!-- <td class="lable"> -->
+						<!-- University: <input type="text" name="university" value="{{university}}"> -->
+					<!-- </td> -->
+					
+				<!-- </tr> -->
+				
+				<tr>
+					<td class="lable">
+						Password: <input type="text" name="password" value="{{password}}">
+					</td>
+					
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" formaction="/login/validateLogIn" name="login" value="Log In">
+					</td>
+				</tr>
+			</table>		
+		</form>
+	
+  </body>
+</html>

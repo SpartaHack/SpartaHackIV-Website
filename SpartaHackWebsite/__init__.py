@@ -1,7 +1,7 @@
 from flask import Flask
 from SpartaHackWebsite.main.controllers import main
 from SpartaHackWebsite.login.controllers import login
-#from SpartaHackWebsite.admin.controllers import admin
+from SpartaHackWebsite.admin.controllers import admin
 #from SpartaHackWebsite.live.controllers import live
 from SpartaHackWebsite.application.controllers import application
 #from SpartaHackWebsite.forgot.controllers import forgot
@@ -15,7 +15,7 @@ app.config.from_pyfile("config.cfg")	#set's config rules for the app like base p
 
 app.register_blueprint(main, url_prefix='/')
 app.register_blueprint(dashboard, url_prefix='/dashboard')
-# app.register_blueprint(admin, url_prefix='/admin')
+app.register_blueprint(admin, url_prefix='/admin')
 # app.register_blueprint(live, url_prefix='/live')
 app.register_blueprint(application, url_prefix='/application')
 app.register_blueprint(login, url_prefix='/login')

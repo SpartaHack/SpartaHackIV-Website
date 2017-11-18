@@ -5,27 +5,32 @@
   </head>
   <body>
     <h2>Log in</h2>
+		{% if cred_error%}
+			{{cred_error}}
+		{%endif%}
 		<form method="post">
 			<table>
 				<tr>
 					<td class="lable">
 						Email: <input type="text" name="email" value="{{email}}">
 					</td>
-					
 				</tr>
-				<!-- <tr> -->
-					<!-- <td class="lable"> -->
-						<!-- University: <input type="text" name="university" value="{{university}}"> -->
-					<!-- </td> -->
-					
-				<!-- </tr> -->
+				<td class="error">
+					{% if no_email_error %}
+						{{no_email_error}}
+					{% elif email_error%}
+						{{email_error}}
+					{%endif%}
+				</td>
 				
 				<tr>
 					<td class="lable">
 						Password: <input type="text" name="password" value="{{password}}">
 					</td>
-					
 				</tr>
+				<td class="error">
+					{{password_error}}
+				</td>
 				<tr>
 					<td>
 						<input type="submit" formaction="/login/validateLogIn" name="login" value="Log In">

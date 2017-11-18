@@ -87,7 +87,6 @@ def validateLogIn():		#did  not create a separate blueprint because user can log
 		response.set_cookie("password_error",expires=0)
 		valid,resp=check_creds(email,password)
 		
-		valid=True
 		if valid:
 			response.set_cookie("email_error",expires=0)		#deleting the cookies
 			response.set_cookie("password_error",expires=0)

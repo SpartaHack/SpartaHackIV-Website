@@ -11,3 +11,7 @@ def index():
 @application.route('/validateSignUp')
 def validateSignUp():
 	pass
+	
+@application.route('/edit')
+def edit():
+	return render_template("edit.html")

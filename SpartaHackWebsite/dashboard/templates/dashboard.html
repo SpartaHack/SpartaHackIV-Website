@@ -6,9 +6,29 @@
 
   <body>
     <div class="navbar-nav">
-		<a class="nav-item nav-link active" href="#intro">SpartaHack IV </a>
+		<a class="nav-item nav-link active" href="/">SpartaHack IV </a>
 		<a class="nav-item nav-link active" href ="/dashboard">My Dashboard<a>
 		<a class="nav-item nav-link active" href ="/logout">Log out<a>
-	
+	</div>
+	<div>
+		Greetings, {{session['username'].capitalize()}}!
+	</div>
+	<div>
+		{%if session['application']%}
+			<a href="/application/edit">Application: Submitted | Edit Application </a>
+		{%else%}
+			<a href="/application"> Submit Application</a>
+		{%endif%}
+	</div>
+		{%if session['rsvp']%}
+			You have submitted your RSVP. You're all set
+		{%else%}
+			<a href="/rsvp">RSVP for the event</a>
+		{%endif%}
+	</div>
+	<div>
+		<a href="/dashboard/changepassword">Change Password</a>
+		<a href="/deleteaccount">Delete Account</a>
+	</div>
   </body>
 </html>

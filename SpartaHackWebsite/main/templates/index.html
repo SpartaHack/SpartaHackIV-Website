@@ -18,7 +18,7 @@
 		<a class="nav-item nav-link active" href ="#about">About<a>
 		{%if logged_in %}
 			<a href ="/dashboard">My Dashboard<a>
-			<a href ="/log_out">Log Out<a>
+			<a href ="/logout">Log Out<a>
 		{% else %}
 			<a href="/login">Login</a>
 			<a href="/application">Sign up</a>
@@ -49,10 +49,32 @@
 	<div id=#sponsors>
 		Sponsors of SpartaHack have the unique ability to connect with 500 student developers in a long-term, project-based setting. This is an unparalleled opportunity to work with coveted potential hires, reinforce company branding in the tight-knit hacker community, and contribute to the innovation of tech education.<br>
 		
-		{% for sponsor in sponsors%}
-			<!--<a href={{sponsor['sponsor_url']}}><img src={{sponsor['logo_url']}}></a><br>-->
+		<div id=#commander_sponsors>
+		
+		{% for sponsor in commander_sponsors%}
+			<a href={{sponsor[0]}}><img src={{sponsor[1]}}></a><br>
 		{%endfor%}
-	
+		</div>
+		
+		<div id=#warrior_sponsors>
+		{% for sponsor in warrior_sponsors%}
+			<a href={{sponsor[0]}}><img src={{sponsor[1]}}></a><br>
+		{%endfor%}
+		</div>
+		
+		<div id=#trainee_sponsors>
+		{% for sponsor in trainee_sponsors%}
+			
+			<a href={{sponsor[0]}}><img src={{sponsor[1]}}></a><br>
+		{%endfor%}
+		</div>
+		
+		<div id=#partner_sponsors>
+		{% for sponsor in partner_sponsors%}
+			<a href={{sponsor[0]}}><img src={{sponsor[1]}}></a><br>
+		{%endfor%}
+		</div>
+	</div>
 	
 	
   </body>

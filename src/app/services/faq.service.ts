@@ -27,7 +27,7 @@ export class FaqService {
 
   getFaqs(): Observable<Faq[]> {
     let options = new RequestOptions({ headers : this.headers});
-    return this.http.get('https://api.elephant.spartahack.com/faqs', options)
+    return this.http.get('https://api.spartahack.com/faqs', options)
       .map((response: Response) => <Faq[]>response.json())
       .catch(this.handleError);
   }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpartaHack IV!</title>
+  </head>
+
+  <body>
+    <div class="navbar-nav">
+    <a class="nav-item nav-link active" href="/">SpartaHack IV </a>
+    <a class="nav-item nav-link active" href ="/dashboard">My Dashboard<a>
+    <a class="nav-item nav-link active" href ="/logout">Log out<a>
+  </div>
+	<div>
+      <h2>Onsite Registration </h2>
+      <form method="post">
+          Will you be attending Sparta Hack IV?
+          <input type="radio" name="attending" value="yes"checked> Yes
+          <input type="radio" name="attending" value="no"> No
+          <br>
+          <select multiple required name="foodpref">
+            <option value="none">None</option>
+            <option value="glutenfree">Gluten Free</option>
+            <option value="Halal">Halal</option>
+            <option value="Kosher">Kosher</option>
+            <option value="lactoseintolerant">Lactose Intolerant</option>
+            <option value="nutallergy">Nut Allergy</option>
+            <option value="vegan">Vegan</option>
+            <option value="vegitarian">Vegetarian</option>
+            <option value="other">Other</option>
+          </select>
+          <br>
+          <select  name="tshirtpref" required>
+            <option value="unisexxs">Unisex XS</option>
+            <option value="unisexs">Unisex S</option>
+            <option value="unisexm">Unisex M</option>
+            <option value="unisexl">Unisex L</option>
+            <option value="unisexxl">Unisex XL</option>
+            <option value="unisexxxl">Unisex XXL</option>
+            <option value="womenxs">Women's XS</option>
+            <option value="womens">Women's S</option>
+            <option value="womenm">Women's M</option>
+            <option value="womenl">Women's L</option>
+            <option value="womenxl">Women's XL</option>
+            <option value="womenxxl">Women's XXL</option>
+          </select>
+          <br>
+          <select name="jobpref">
+            <option value="intern">Internship Opportunities</option>
+            <option value="fulltime">Full Time Opportunities</option>
+            <option value="both">Both</option>
+            <option value="neither">Neither</option>
+          </select>
+          <br>
+          By RSVPing, I consent to share my resume and profile information with SpartaHack sponsors.
+          <br>
+          <input type="submit" formaction="/rsvp/validatersvp" name="rsvpform" value="Submit RSVP">
+
+      </form>
+
+
+	</div>
+  </body>
+</html>

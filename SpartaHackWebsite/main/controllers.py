@@ -1,5 +1,5 @@
 from flask import Blueprint
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template,session
 import requests
 import json
 import operator
@@ -13,7 +13,7 @@ def get_faqs():
 
 	headers = {
 		'content-type': "application/json",
-		'authorisation':app.config['DEV_API_KEY']
+		'authorisation':app.config['API_KEY']
 		}
 	faqs=[]
 	response = requests.request("GET", url, headers=headers)
@@ -28,18 +28,47 @@ def get_faqs():
 
 	
 def get_sponsors():
+
 	url = "https://api.elephant.spartahack.com/sponsors/"
 	headers = {
-		'content-type': "application/json",
-		'authorisation':app.config['DEV_API_KEY']
-		}
-	sponsors=[]
-	#response = requests.request("GET", url, headers=headers)
-	#temp=json.loads(response.text)
-	return sponsors
+	'content-type': "application/json",
+	'authorization':app.config['API_KEY']
+	}
+		
+	response = requests.request("GET", url, headers=headers)
+	temp=json.loads(response.text)
+	trainee_sponsors=[]
+	commander_sponsors=[]
+	partner_sponsors=[]
+	warrior_sponsors=[]
+	
+	
+	for item in temp:
+		if item['level'].lower() =="trainee":
+			sponsor=(item['url'],item['logo_svg_light'],item['logo_svg_dark'],item['logo_png_dark'])
+			trainee_sponsors.append(sponsor)
+			
+		if item['level'].lower()=="commander":
+			sponsor=(item['url'],item['logo_svg_light'],item['logo_svg_dark'],item['logo_png_dark'])
+			commander_sponsors.append(sponsor)
+			
+		if item['level'].lower()=="partner":
+			sponsor=(item['url'],item['logo_svg_light'],item['logo_svg_dark'],item['logo_png_dark'])
+			partner_sponsors.append(sponsor)
+
+		if item['level'].lower()=="warrior":
+			sponsor=(item['url'],item['logo_svg_light'],item['logo_svg_dark'],item['logo_png_dark'])
+			warrior_sponsors.append(sponsor)
+			
+	return (warrior_sponsors,partner_sponsors,commander_sponsors,trainee_sponsors)
+	
 @main.route('/')
 def index():
-	logged_in=None
+	if session.get('auth_token') is not None:
+		logged_in=True		#for options in nav bar
+	else:
+		logged_in=False
 	faqs=get_faqs()
-	sponsors=get_sponsors()
-	return render_template("index.html",faqs=faqs,logged_in=logged_in,sponsors=sponsors	)
+	warrior_sponsors,partner_sponsors,commander_sponsors,trainee_sponsors=get_sponsors()
+
+	return render_template("index.html",faqs=faqs,logged_in=logged_in,warrior_sponsors=warrior_sponsors,partner_sponsors=partner_sponsors,commander_sponsors=commander_sponsors,trainee_sponsors=trainee_sponsors)

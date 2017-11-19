@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpartaHack IV!</title>
+  </head>
+
+  <body>
+    <div class="navbar-nav">
+		    <a class="nav-item nav-link active" href ="/login">Log in<a>
+	  </div>
+    <h2>Request Password Change</h2>
+    {% if link_sent %}
+        {{link_sent|safe}}
+
+    {%elif link_not_sent %}
+        {{link_not_sent|safe}}
+        
+    {%endif%}
+    <form method=post>
+
+      Email: <input type="text" name="email"><br>
+      <input type="submit" formaction="/forgot/emailsubmit" name="passwordchangeemail" value="Submit">
+    </form>
+
+  </body>
+</html>

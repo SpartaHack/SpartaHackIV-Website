@@ -6,9 +6,12 @@ forgot = Blueprint('forgot', __name__,template_folder='templates')
 
 @forgot.route('/')
 def index():
-    if respo
-    return render_template("forgot.html")
-
+    if request.cookies.get("link_sent")=="True":
+        link_sent="Password reset link has been sent to:"+"<b>"+resquest.cookies.get(password_reset_email+"</b>")
+        return render_template("forgot.html",link_sent=link_sent)
+    if request.cookies.get("link_sent")=="False":
+        link_not_sent="No account with email:"+"<b>"+resquest.cookies.get(password_reset_email+"</b>"
+        return render_template("forgot.html",link_not_sent=link_not_sent)
 @forgot.route("/emailsubmit")
 def emailsubmit():
     email=request.form['passwordchangeemail']

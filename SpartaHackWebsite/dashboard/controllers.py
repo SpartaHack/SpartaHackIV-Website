@@ -24,7 +24,7 @@ def check_password(curr_password,new_password,conf_password):
 def index():
 	if session.get('auth_token') is None:		#if user not logged in then redirect to login page
 		return redirect('/login')
-	return render_template("dashboard.html")
+	return render_template("dashboard.html",rspv="/rspv",status=session['application']['status'])
 
 @dashboard.route('/changepassword')
 def changepassword():

@@ -8,6 +8,13 @@
 		{% if cred_error%}
 			{{cred_error}}
 		{%endif%}
+    {% if request.cookies.get(no_newpassword) %}
+      {{request.cookies.get(no_newpassword)}}
+    {% elif request.cookies.get(newpassword_confpassword_diff) %}
+      {{ request.cookies.get(newpassword_confpassword_diff) }}
+    {% elif request.cookies.get(password_changed) %}
+      {{request.cookies.get(password_changed)}}
+    {%endif%}
 		<form method="post">
 			<table>
 				<tr>
@@ -22,7 +29,7 @@
 						{{email_error}}
 					{%endif%}
 				</td>
-				
+
 				<tr>
 					<td class="lable">
 						Password: <input type="text" name="password" value="{{password}}">
@@ -36,7 +43,7 @@
 						<input type="submit" formaction="/login/validateLogIn" name="login" value="Log In">
 					</td>
 				</tr>
-			</table>		
+			</table>
 		</form>
 		<div>
 			<a href="/forgot">Forgot Password?</a>

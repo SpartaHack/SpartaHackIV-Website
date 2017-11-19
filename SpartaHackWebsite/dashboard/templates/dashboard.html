@@ -15,18 +15,30 @@
 	</div>
 	<div>
 
-		{% if session['application']['status'] == True%}
+		{% if status == "confirmed" %}
       You've been accepted! Congrats :-)
       {% if session['rsvp']%}
         You have submitted your RSVP. You're all set
       {%else%}
-        <a href="/rsvp">RSVP for the event</a>
+        <a href={{rspv}}>RSVP for the event</a>
       {%endif%}
-    {%else%}
-      We are sorry but you were not accepted :-(
-    {%endif%}
+    {% endif %}
 
-		{%if session['application']%}
+    {% if status == "waitlisted" %}
+            Keep on hanging! You're are waitlisted as of now
+          {% if session['rsvp'] %}
+              You have submitted your RSVP. You're all set
+          {% else %}
+              <a href={{rspv}}>RSVP for the event</a>
+          {% endif %}
+    {% endif %}
+
+    {% if status == "rejected" %}
+      We are sorry but you were not accepted :-(
+    {% endif %}
+    <br>
+    {% if status !="rejected" %}
+		  {% if session['application'] %}
 			 <a href="/application/edit">Application: Submitted | Edit Application </a>
        {% if session['rsvp']%}
          You have submitted your RSVP. You're all set
@@ -34,6 +46,7 @@
          <a href="/rsvp">RSVP for the event</a>
        {%endif%}
     {%endif%}
+  {% endif %}
 	</div>
 
 	</div>

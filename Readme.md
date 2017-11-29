@@ -1,29 +1,24 @@
-# SpartaHack Website #
+# README
 
-This is a guide for running a local copy of the SpartaHack Site at http://localhost:5000
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-### Installation ###
+Things you may want to cover:
 
-It's a good idea to run the site in a virtual enviorment so that the dependencises don't clash with other projects
+* Ruby version
 
-`pip3 install virtualenv`
+* System dependencies
 
-Navigate to the folder with `run.py` and run `virtualenv -p /usr/bin/python3 SpartaHackEnv`
+* Configuration
 
-Source the env using `source SpartaHackEnv/bin/activate`
+* Database creation
 
-Install dependencies `pip3 install -r requirements.txt`
+* Database initialization
 
-### Running SpartaHack locally ###
+* How to run the test suite
 
-Navigate to the folder containing `run.py`
+* Services (job queues, cache servers, search engines, etc.)
 
-Run `python run.py`
+* Deployment instructions
 
-Navigate to `http://localhost:5000` to check the site
-
-
-#### Misc info ####
-
-Contact @yash for config files
-
+* ...

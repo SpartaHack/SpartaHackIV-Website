@@ -1,0 +1,19 @@
+<% if cookies.signed[:theme] && cookies.signed[:theme] == 'dark' %>
+<nav id="header" class="wrap-row align-center dark">
+<% else %>
+<nav id="header" class="wrap-row align-center">
+<% end %>
+  <div id="left-wrap" class="flex wrap-row align-center">
+    <%= image_tag "diamond-w-shadow.svg", :id => "nav-diamond", :class => "diamond"%>
+    <h1 id="nav-spartahack"><a href='/'>&ltSPARTAHACK | IV&gt</a></h1>
+  </div>
+  <div id="right-wrap" class="flex wrap-row end">
+    <%= render "user/navigation_items" %>
+  </div>
+
+  <div id="mobile">
+    <%= render "user/navigation_items" %>
+  </div>
+  <%= image_tag "menu.svg", :id => "mobile-menu-icon" %>
+</nav>
+<div id="mobile-overlay"></div>

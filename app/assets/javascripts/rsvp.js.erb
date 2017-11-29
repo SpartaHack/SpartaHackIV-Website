@@ -1,0 +1,214 @@
+////////////////////////////////////////////////////
+// Select2 calls
+///////////////////////////////////////////////////
+function createSelects() {
+  $('#rsvp_dietary_restrictions').select2({
+    placeholder: "Dietary Restrictions",
+    allowClear: true
+  });
+
+  $('#rsvp_shirt_size').select2({
+    placeholder: "Shirt Size",
+    allowClear: true
+  });
+
+  $('#rsvp_jobs').select2({
+    placeholder: "I am looking for...",
+    allowClear: true
+  });
+}
+
+////////////////////////////////////////////////////
+// popups
+///////////////////////////////////////////////////
+function popUpBottom() {
+  $(".popup").css("bottom", "170px");
+  $(".popup").css("top", "");
+  $("#popup-wrapper").fadeIn("slow");
+}
+
+function popUpTop() {
+  $(".popup").css("top", "80px");
+  $(".popup").css("bottom", "");
+  $("#popup-wrapper").fadeIn("slow");
+}
+
+$('#popup-wrapper, #popup-error-wrapper, #popup-wrapper p').click(function(e) {
+  if (e.target !== this)
+    return;
+
+  $('#popup-wrapper, #popup-error-wrapper').fadeOut('slow');
+});
+
+$(window).resize(function() {
+  createSelects();
+});
+
+$(window).scroll(function() {
+  $("#popup-wrapper, #popup-error-wrapper").fadeOut('fast');
+});
+
+////////////////////////////////////////////////////
+// Conditionality
+///////////////////////////////////////////////////
+function attendingCheck() {
+  if ($('input[name="rsvp[attending]"]:checked').val() === "Yes") {
+    $('.attending-form').stop().slideDown({
+      duration: 'slow',
+      start: createSelects
+    });
+  } else {
+    $('.attending-form').stop().slideUp({
+      duration: 'slow',
+      start: createSelects
+    });
+  }
+}
+
+$('input[name="rsvp[attending]"]').change(attendingCheck);
+
+attendingCheck();
+
+$('input[name="rsvp[resume]"]').on('change',function(){
+  $('i.fa').removeClass('fa-arrow-up');
+  $('i.fa').addClass('fa-check-circle-o');
+  $('#resume-added').remove();
+  $('.file-upload').append("<p id='resume-added'>Resume Added</p>")
+
+  swal({
+    title: "Resume Added",
+    type: "success",
+    text: null,
+    showCancelButton: false,
+    timer: 1000,
+    showConfirmButton: false,
+    confirmButtonColor: "#D4B166",
+    confirmButtonText: "Yeah dude",
+    allowEscapeKey: true,
+    allowOutsideClick: true
+  });
+  (darkTheme == true) ?
+  $(".sweet-alert").addClass("dark"): $(".sweet-alert").removeClass("dark");
+});
+
+$('#rsvp_dietary_restrictions').on('change', function() {
+  values = $('#rsvp_dietary_restrictions').val();
+  console.log(values)
+  if (values && values.indexOf("None") > -1) {
+    $('#rsvp_dietary_restrictions').val(['None']);
+    $('#other-dietary-restrictions-wrap').stop().slideUp('slow', function() {
+      $('#rsvp_other_dietary_restrictions').val("");
+    });
+  } else if (values && values.indexOf("Other") > -1) {
+    $('#other-dietary-restrictions-wrap').stop().slideDown({
+      duration: 'slow'
+    });
+  }
+
+  if (values && values.indexOf("Other") == -1 || !values) {
+    $('#other-dietary-restrictions-wrap').stop().slideUp('slow', function() {
+      $('#rsvp_other_dietary_restrictions').val("");
+    });
+  }
+
+});
+
+////////////////////////////////////////////////////
+// Validations
+///////////////////////////////////////////////////
+
+function validate() {
+  if ($('input[name="rsvp[attending]"]:checked').val() === "Yes") {
+    if ($("#rsvp_dietary_restrictions").val() === null) {
+      $(".popup").html("Please fill out the dietary restrictions section.");
+      popUpTop();
+    } else if ($("#rsvp_dietary_restrictions").val().includes("None") && $("#rsvp_dietary_restrictions").val().length > 1) {
+      $(".popup").html("Dietary restrictions has conflicting information. Please review that section.");
+      popUpTop();
+    } else if ($("#rsvp_dietary_restrictions").val().includes("Other") && $("#rsvp_other_dietary_restrictions").val().length === 0) {
+      $(".popup").html("Please indicate your other dietary restriction.");
+      popUpTop();
+    } else if ($("#rsvp_shirt_size").val().length === 0) {
+      $(".popup").html("Please indicate your shirt size.");
+      popUpTop();
+    } else if ($('input[name="rsvp[carpool_sharing]"]:checked').val() === undefined) {
+      $(".popup").html("Please indicate your carpool sharing preference.");
+      popUpTop();
+    } else if ($('#rsvp_resume').val() === "") {
+      $(".popup").html("Please add a resume.");
+      popUpTop();
+    } else if ($('#rsvp_jobs').val() === "") {
+      $(".popup").html("Please choose your job preference.");
+      popUpTop();
+    } else {
+      return true;
+    }
+  } else if ($('input[name="rsvp[attending]"]:checked').val() === "No") {
+    return true;
+  } else {
+    $(".popup").html("Please indicate whether or not you are going.");
+    popUpTop();
+  }
+}
+
+$('#rsvp-form').submit(function(event) {
+  event.preventDefault();
+  if (validate()) {
+    $(".popup").html('<div id="loading"></div>')
+
+    $(".popup").css("bottom", "170px");
+    $("#popup").css("top", "")
+    $("#popup-wrapper").fadeIn("fast");
+
+    var d = 1;
+    var v = new Vivus('loading', {
+      start: 'manual',
+      speed:500,
+      file: <%= '"' + asset_path('logo/logo.svg') + '"' %>
+    },function(c){
+    	  d *= -1;
+        if(d == 1){
+        	setTimeout(function(){
+            v.play(d)
+          },500);
+        }else{
+        v.play(d);
+        }
+
+    });
+    v.play(d);
+
+    var formData = new FormData($(this)[0]);
+
+    $.ajax({
+      url: $(this).attr('action'),
+      headers: {
+        'X-WWW-USER-TOKEN': $(this).find('input[name="user"]').val()
+      },
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      type: $(this).find('input[name=_method]').val(),
+      error: function(data) {
+        $("#popup-wrapper").fadeOut("slow",function(){
+          console.log(data)
+          $.each(data.responseJSON.errors,
+            function(key, value) {
+              $(".popup").html(key.charAt(0).toUpperCase() + key.slice(1) + " " + value);
+              popUpTop();
+            });
+        });
+      },
+      success: function(data) {
+        $("#popup-wrapper").fadeOut("slow",function(){
+          window.location.href = "/dashboard";
+        });
+      }
+    });
+  }
+
+  return false;
+});
+
+createSelects();

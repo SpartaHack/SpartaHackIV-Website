@@ -278,17 +278,17 @@ if ($('#application_statement').length) {
       current.css('font-weight', 'bold');
     }
     if (characterCount > 1999 && characterCount < 2500) {
-      current.css('color', '#B58A2D');
+      current.css('color', '#337291');
       current.css('font-weight', 'normal');
     }
     if (characterCount > 2499 && characterCount < 3000) {
-      current.css('color', '#B58A2D');
+      current.css('color', '#337291');
       current.css('font-weight', '900');
     }
 
     if (characterCount == 3000) {
-      maximum.css('color', '#B58A2D');
-      current.css('color', '#B58A2D');
+      maximum.css('color', '#337291');
+      current.css('color', '#337291');
       theCount.css('font-weight', '900');
     } else {
       maximum.css('color', '#D4B166');

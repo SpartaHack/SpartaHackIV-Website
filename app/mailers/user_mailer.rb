@@ -4,14 +4,14 @@ class UserMailer < ApplicationMailer
   def welcome_email(name, email)
     attachments.inline['banner.png'] = File.read("#{Rails.root}/app/assets/images/logo/banner.png")
     @name = name
-    mail :to => email, :subject => "SpartaHack 2017 Application Received"
+    mail :to => email, :subject => "SpartaHack IV Application Received"
   end
 
   def reset_password_email(name, email, token)
     attachments.inline['banner.png'] = File.read("#{Rails.root}/app/assets/images/logo/banner.png")
     @name = name
     @token = token
-    mail :to => email, :subject => "SpartaHack 2017 Reset Password Link"
+    mail :to => email, :subject => "SpartaHack IV Reset Password Link"
   end
 
   def logistics_email(name, email, id)
@@ -34,7 +34,7 @@ class UserMailer < ApplicationMailer
     attachments.inline['banner.png'] = File.read("#{Rails.root}/app/assets/images/logo/banner.png")
     attachments.inline['footer.png'] = File.read("#{Rails.root}/app/assets/images/favicons/push-192x192.png")
 
-    mail :to => email, :subject => "SpartaHack 2017 Logistics"
+    mail :to => email, :subject => "SpartaHack IV Logistics"
   end
 
 end

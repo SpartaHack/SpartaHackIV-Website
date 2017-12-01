@@ -2,7 +2,7 @@
 <%= hidden_field_tag 'user' , User.current_user.auth_token  %>
 <%= hidden_field_tag '_method' , "POST"  %>
 <div class="add-margin-top gold-box">
-  <label id="attending">Will you be attending SpartaHack 2017?</label>
+  <label id="attending">Will you be attending SpartaHack IV?</label>
   <div class="radio-wrap">
     <%= f.collection_radio_buttons :attending, [['Yes', 'Yes'], ['No', 'No']], :first, :last, required: true %>
   </div>

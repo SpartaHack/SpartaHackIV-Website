@@ -214,6 +214,9 @@ p {
   @media (max-width: 550px) {
     font-size: 0.9em;
   }
+  &.dark {
+    color: $light-blue;
+  }
 }
 
 svg {

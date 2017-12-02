@@ -241,12 +241,12 @@ nav {
   }
 
   img {
-    content: image-url("socialMedia/mlh-white.svg");
+    content: url(https://s3.amazonaws.com/logged-assets/trust-badge/2018/blue.svg);
   }
 
   &.dark {
     img {
-      content: image-url("socialMedia/mlh-gray.svg");
+      content: url(https://s3.amazonaws.com/logged-assets/trust-badge/2018/blue.svg);
     }
   }
 

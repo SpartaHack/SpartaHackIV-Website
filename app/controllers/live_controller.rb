@@ -5,6 +5,7 @@ class LiveController < ApplicationController
   require 'pp'
 
   def index
+    redirect_to '/' and return
     unless File.exist?("app/assets/pdfs/SpartaHack-Map.pdf")
       open('app/assets/pdfs/SpartaHack-Map.pdf', 'wb') do |file|
         file << open('https://api.spartahack.com/map').read

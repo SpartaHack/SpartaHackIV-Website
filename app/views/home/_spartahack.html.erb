@@ -94,12 +94,9 @@
 
     <div id="notify-email">
       <p>
-        Find out how to become a volunteer!
+        <a href="/application" class="apply-button">Apply for Spartahack IV</a>
       </p>
-      <%= form_tag "/subscribe", :remote => true, :authenticity_token => true %>
-        <%= email_field_tag "emailinput", nil, id: "notify-email-input", class: "remove-outline", placeholder: "VOLUNTEER SIGN UP", autocomplete: "off" %>
-        <button class="submit-button hide">SUBMIT</button>
-      </form>
+      
     </div>
 
   </div>

@@ -270,11 +270,11 @@ if ($('#application_statement').length) {
 
     /*This isn't entirely necessary, just playin around*/
     if (characterCount < 1000) {
-      current.css('color', '#D4B166');
+      current.css('color', '#337291');
       current.css('font-weight', 'normal');
     }
     if (characterCount > 999 && characterCount < 2000) {
-      current.css('color', '#D4B166');
+      current.css('color', '#337291');
       current.css('font-weight', 'bold');
     }
     if (characterCount > 1999 && characterCount < 2500) {
@@ -291,7 +291,7 @@ if ($('#application_statement').length) {
       current.css('color', '#337291');
       theCount.css('font-weight', '900');
     } else {
-      maximum.css('color', '#D4B166');
+      maximum.css('color', '#337291');
       theCount.css('font-weight', 'normal');
     }
 

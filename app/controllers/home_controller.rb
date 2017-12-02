@@ -22,7 +22,7 @@ class HomeController < ApplicationController
 
 
   def subscribe
-    @button = "#D4B166"
+    @button = "#337291"
     if subscribe_params[:emailinput] == ""
       @type = "error"
       @desc = "You cannot submit an empty form."

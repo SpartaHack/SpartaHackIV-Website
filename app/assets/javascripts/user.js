@@ -12,7 +12,7 @@ if ($('#dashboard').length > 0) {
         text: "Are you sure you want to delete all your information? \nWe'd hate to see you go :(",
         showCancelButton: true,
         showConfirmButton: true,
-        confirmButtonColor: "#D4B166",
+        confirmButtonColor: "#337291",
         confirmButtonText: "Yes delete it",
         cancelButtonText: "Nevermind",
         allowEscapeKey: true,

@@ -47,7 +47,7 @@ $('.diamond, #logo-center').click(function() {
       text: "You've found an easter egg! What theme should we remember?",
       showCancelButton: true,
       cancelButtonText: "Dark is swell",
-      confirmButtonColor: "#D4B166",
+      confirmButtonColor: "#337291",
       confirmButtonText: "Light is cool",
       allowEscapeKey: true,
       allowOutsideClick: true
@@ -111,7 +111,7 @@ $('.diamond, #logo-center').click(function() {
       text: "Want to change the theme?",
       showCancelButton: true,
       cancelButtonText: "Nah",
-      confirmButtonColor: "#D4B166",
+      confirmButtonColor: "#337291",
       confirmButtonText: "Yeah dude",
       allowEscapeKey: true,
       allowOutsideClick: true

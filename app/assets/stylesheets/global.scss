@@ -331,6 +331,30 @@ a {
   }
 }
 
+@-webkit-keyframes pulseWarningIns {
+  0% {
+    background-color: #C2E4F1; }
+  100% {
+    background-color: #1F4051; } }
+
+@keyframes pulseWarningIns {
+  0% {
+    background-color: #C2E4F1; }
+  100% {
+    background-color: #1F4051; } }
+
+@-webkit-keyframes pulseWarning {
+  0% {
+    border-color: #C2E4F1; }
+  100% {
+    border-color: #C2E4F1; } }
+
+@keyframes pulseWarning {
+  0% {
+    border-color: #C2E4F1; }
+  100% {
+    border-color: #C2E4F1; } }
+
 .sweet-alert .sa-icon.sa-success .sa-placeholder,
 .sweet-alert .sweet-alert .sa-icon.sa-error {
   border-color: $medium-blue !important;

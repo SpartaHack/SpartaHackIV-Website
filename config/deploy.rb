@@ -7,7 +7,6 @@ set :puma_workers,    0
 # Don't change these unless you know what you're doing
 set :pty,             true
 set :use_sudo,        false
-set :branch,        :develop
 set :stage,           :production
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
@@ -22,8 +21,7 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
 ## Defaults:
-# set :scm,           :git
-# set :branch,        :master
+ set :branch,        :develop
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5

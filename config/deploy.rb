@@ -1,6 +1,9 @@
 set :repo_url,        'git@github.com:SpartaHack/SpartaHackIV-Website.git'
 set :application,     'SpartaHackIV-Website'
+set :assets_roles,    [:web, :app]            # Defaults to [:web]
 set :user,            'deploy'
+set :rvm_ruby_version, '2.2.5'
+set :rvm_type, :user
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
@@ -19,6 +22,7 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
+set :default_shell, '/bin/bash -l'
 
 ## Defaults:
  set :branch,        :develop
@@ -46,8 +50,8 @@ namespace :deploy do
   desc "Make sure local git is in sync with remote."
   task :check_revision do
     on roles(:app) do
-      unless `git rev-parse HEAD` == `git rev-parse origin/master`
-        puts "WARNING: HEAD is not the same as origin/master"
+      unless `git rev-parse HEAD` == `git rev-parse origin/#{fetch(:branch)}`
+        puts "WARNING: HEAD is not the same as origin/#{fetch(:branch)}"
         puts "Run `git push` to sync changes."
         exit
       end

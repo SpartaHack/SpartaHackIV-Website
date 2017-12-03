@@ -1,0 +1,142 @@
+<%= render "admin/partials/navigation" %>
+
+<div id="wrap-admin">
+  <div id="popup-wrapper">
+  </div>
+
+  <section id="user-stat">
+    <div class="row">
+      <div class="inner-wrap">
+        <div class="box" id="user-stats"><i class="fa fa-cog fa-spin fa-fw"></i></div>
+        <div class="stat-text">Users</div>
+      </div>
+      <div class="inner-wrap">
+        <div class="box" id="app-stats"><i class="fa fa-cog fa-spin fa-fw"></i></div>
+        <div class="stat-text">Applications</div>
+      </div>
+      <div class="inner-wrap">
+        <div class="box" id="accepted-stats"><i class="fa fa-cog fa-spin fa-fw"></i></div>
+        <div class="stat-text">Acceptances</div>
+      </div>
+      <div class="inner-wrap">
+        <div class="box" id="waitlisted-stats"><i class="fa fa-cog fa-spin fa-fw"></i></div>
+        <div class="stat-text">Waitlists</div>
+      </div>
+      <div class="inner-wrap">
+        <div class="box" id="denied-stats"><i class="fa fa-cog fa-spin fa-fw"></i></div>
+        <div class="stat-text">Denials</div>
+      </div>
+      <div class="inner-wrap">
+        <div class="box" id="rsvp-stats"><i class="fa fa-cog fa-spin fa-fw"></i></div>
+        <div class="stat-text">RSVPs</div>
+      </div>
+      <div class="inner-wrap">
+        <div class="box" id="rsvp-yes-stats"><i class="fa fa-cog fa-spin fa-fw"></i></div>
+        <div class="stat-text">RSVP Yes</div>
+      </div>
+      <div class="inner-wrap">
+        <div class="box" id="rsvp-no-stats"><i class="fa fa-cog fa-spin fa-fw"></i></div>
+        <div class="stat-text">RSVP No</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic-selection">
+    <div class="row">
+      <div class="title-wrap">
+        <h1 class="section-head">Admin Topics</h1>
+        <div class="hline"></div>
+      </div>
+    <% if @user.roles.include? "director"%>
+      <div class="hvr-underline-from-left full">
+      	<a href="/admin/sponsorship"><div class="topic" >Sponsorship</div></a>
+      </div>
+      <div class="hvr-underline-from-left full">
+      	<a href="/admin/faq"><div class="topic" >FAQ</div></a>
+      </div>
+    <% end %>
+    <% if @user.roles.include? "director" or @user.roles.include? "volunteer" %>
+      <!-- <div class="hvr-underline-from-left full" id="users">
+        <a href=""><div class="topic" >Users</div></a>
+      </div> -->
+    <% end %>
+    <% if @user.roles.include? "director" %>
+      <div class="hvr-underline-from-left full" id="announcements">
+        <a href=""><div class="topic" >Announcements</div></a>
+      </div>
+    <% end %>
+      <div class="hvr-underline-from-left full">
+        <a href="/admin/statistics"><div class="topic" >Statistics</div></a>
+      </div>
+      <div class="hvr-underline-from-left full">
+        <a href="/admin/onsite"><div class="topic">Onsite Application</div></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="title-wrap">
+        <h1 class="section-head">Attendee Topics</h1>
+        <div class="hline"></div>
+      </div>
+
+      <div class="hvr-underline-from-left full">
+        <a href="/application"><div class="topic" >Application</div></a>
+      </div>
+      <div class="hvr-underline-from-left full">
+        <a href="/dashboard"><div class="topic" >Dashboard</div></a>
+      </div>
+      <!-- <div class="hvr-underline-from-left full">
+        <a href="/rsvp"><div class="topic" >RSVP</div></a>
+      </div> -->
+      <!-- <div class="hvr-underline-from-left full">
+        <a href="/mentorship/register"><div class="topic" >Mentorship</div></a>
+      </div> -->
+    </div>
+
+  </section>
+</div>
+
+<%= javascript_tag do %>
+  window.onload = function(e) {
+    $('#popup-wrapper').click(function(e){
+  		  if (e.target !== this)
+  		    return;
+
+  		  $('#popup-wrapper').fadeOut('fast');
+  	});
+
+    $.ajax({
+      url: '/admin/dashboard/stats',
+      type: 'post',
+    });
+
+    $('#announcements').click(function(e) {
+      e.preventDefault();
+
+      $('#popup-wrapper').html(
+        "<%= j(render partial: 'admin/partials/notifications')  %>"
+      );
+
+      $('#announce').submit(function(e) {
+        console.log($(this).serialize());
+        pinned = $("#pinned").is(':checked');
+        console.log( $(this).serialize() + "&announcement%5Bpinned%5D=" + pinned);
+        e.preventDefault();
+        $.ajax({
+          url: "/admin/notifications",
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+          },
+          type: "post",
+          context: document.body,
+          data: $(this).serialize()
+        });
+        $(this).closest('form').find("input[type=text], textarea").val("");
+        $("#pinned").removeAttr('checked');
+      });
+
+       $("#popup-wrapper").css("display", "flex");
+    });
+
+  }
+<% end %>

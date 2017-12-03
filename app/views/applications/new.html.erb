@@ -1,0 +1,22 @@
+<%= render "user/navigation" %>
+<%= render "shared/errors" %>
+
+<div class="wrap-main">
+  <section id="app">
+    <div class="row">
+
+      <div class="title-wrap">
+        <h1 class="section-head page1">You got this!</h1>
+        <h1 class="section-head page2 hide-page">Create Account</h1>
+        <div class="hline"></div>
+      </div>
+
+      <h4 id="required">* fields are required.</h4>
+
+      <%= render 'applications/partials/form' %>
+    </div>
+
+  </section>
+
+  <%= render 'applications/partials/new_javascript' %>
+</div>

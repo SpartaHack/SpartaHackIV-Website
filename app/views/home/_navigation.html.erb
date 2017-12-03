@@ -1,0 +1,29 @@
+<% if cookies.signed[:theme] && cookies.signed[:theme] == 'dark' %>
+<nav id="header" class="wrap-row align-center dark">
+<% else %>
+<nav id="header" class="wrap-row align-center">
+<% end %>
+  <div id="left-wrap" class="flex wrap-row align-center">
+    <%= image_tag "diamond-w-shadow.svg", :id => "nav-diamond", :class => "diamond"%>
+    <h1 id="nav-spartahack"><a href='/'>&ltSPARTAHACK | IV&gt</a></h1>
+  </div>
+  <div id="right-wrap" class="flex wrap-row end">
+    <%= render "navigation_items" %>
+  </div>
+
+  <div id="mobile">
+    <%= render "navigation_items" %>
+  </div>
+  <%= image_tag "menu.svg", :id => "mobile-menu-icon" %>
+</nav>
+<div id="mobile-overlay"></div>
+<% if cookies.signed[:theme] && cookies.signed[:theme] == 'dark' %>
+  <a id="mlh-trust-badge" href="https://mlh.io/seasons/na-2018/events?utm_source=na-2018&utm_medium=TrustBadge&utm_campaign=na-2018&utm_content=blue" target="_blank">
+    <img src="https://s3.amazonaws.com/logged-assets/trust-badge/2018/blue.svg" alt="Major League Hacking 2017 Hackathon Season" style="width:100%">
+  </a>
+
+<% else %>
+  <a id="mlh-trust-badge" href="https://mlh.io/seasons/na-2018/events?utm_source=na-2018&utm_medium=TrustBadge&utm_campaign=na-2018&utm_content=blue" target="_blank">
+    <img src="https://s3.amazonaws.com/logged-assets/trust-badge/2018/blue.svg" alt="Major League Hacking 2017 Hackathon Season" style="width:100%">
+  </a>  
+<% end %>

@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Scout-Thin';
+  font-style: normal;
+  src: font-url('Scout/ScoutCond-Thin.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Scout-Regular';
+  font-style: normal;
+  src: font-url('Scout/Scout-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lato-Italic';
+  font-weight: 100;
+  font-style: normal;
+  src: font-url('Lato/lato-italic-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       font-url('Lato/lato-italic-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       font-url('Lato/Lato-Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Lato-Light';
+  font-weight: 100;
+  font-style: normal;
+  src: font-url('Lato/lato-light-webfont.woff') format('woff2'), /* Super Modern Browsers */
+       font-url('Lato/lato-light-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       font-url('Lato/Lato-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  font-weight: 100;
+  font-style: normal;
+  src: font-url('Lato/lato-regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       font-url('Lato/lato-regular-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       font-url('Lato/Lato-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}

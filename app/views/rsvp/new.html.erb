@@ -1,0 +1,20 @@
+<%= render "user/navigation" %>
+<%= render "shared/errors" %>
+
+<div class="wrap-main">
+  <section id="rsvp">
+    <div class="row">
+
+      <div class="title-wrap">
+        <h1 class="section-head">Let's go!</h1>
+        <div class="hline"></div>
+      </div>
+
+      <h4 id="required">All fields are required</h4>
+
+      <%= render "form" %>
+    </div>
+  </section>
+
+  <%= javascript_include_tag 'vivus.min'%>
+</div>

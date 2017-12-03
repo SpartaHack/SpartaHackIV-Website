@@ -1,0 +1,38 @@
+<% if !@faqs.blank? %>
+  <section id="faq">
+    <h2 class="section-head faq-top">
+      FAQ
+    </h2>
+
+    <div id="faq-box">
+      <div id="questions-wrap">
+        <div class="arrow-wrap">
+          <i class="fa fa-angle-up" style="display:none;"></i>
+        </div>
+        <div id="questions">
+          <% @faqs.each_with_index do |faq, index| %>
+            <%= index == 0 ? '<article class="active-q">'.html_safe : '<article>'.html_safe %>
+              <h3 id="<%= index %>">
+                <span><%= faq.question.slice(0,1).capitalize + faq.question.slice(1..-1) %></span>
+              </h3>
+            </article>
+
+            <% if index < @faqs.count %>
+            <div class="a-hline"></div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="arrow-wrap">
+          <i class="fa fa-angle-down"></i>
+        </div>
+      </div>
+      <div id="answers">
+        <% @faqs.each_with_index do |faq, index| %>
+          <p class="<%= index == 0 ? "current-answer" : "hidden-answer" %>">
+            <%= faq.answer.html_safe %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>

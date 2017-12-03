@@ -1,0 +1,94 @@
+<%= render "user/navigation" %>
+<div class="top outer border user-border"></div>
+<div class="top inner border user-border"></div>
+
+<section id="dashboard" class="flex center wrap-column align-center">
+  <div id="greeting-wrapper">
+    <h2 id="greeting" class="section-head">
+      <p>
+        Greetings, <%= User.current_user.first_name.capitalize %>
+        <span>|</span>
+      </p>
+    </h2>
+    <div class="dash-title-animation">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" viewBox="0 0 592.07 37.13">
+      <defs>
+          <style>
+            #dash-top-line{stroke:url(#New_Gradient_Swatch);}
+            #dash-center-hanging{stroke-width:0.5px;stroke:url(#New_Gradient_Swatch-2);}
+            #dash-bottom-line{stroke:url(#New_Gradient_Swatch-3);}
+          </style>
+          <linearGradient id="New_Gradient_Swatch" y1="0.5" x2="592.07" y2="0.5" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#1f4051"/>
+              <stop offset="1" stop-color="#4BA1D4"/>
+          </linearGradient>
+          <linearGradient id="New_Gradient_Swatch-2" x1="193.67" y1="37.89" x2="193.67" y2="15.65" xlink:href="#New_Gradient_Swatch"/>
+          <linearGradient id="New_Gradient_Swatch-3" x1="80.3" y1="15.06" x2="361.47" y2="15.06" xlink:href="#New_Gradient_Swatch"/>
+      </defs>
+      <line class="dash-paths-lines" id="dash-top-line" y1="0.5" x2="592.07" y2="0.5"/>
+      <path class="dash-paths-lines" id="dash-center-hanging" d="M143.28,15.82c2.91,3.06,22.78,23.27,53.66,21.73,26.27-1.31,43.51-18,47.13-21.73" transform="translate(0 -0.75)"/>
+      <line class="dash-paths-lines" id="dash-bottom-line" x1="80.3" y1="15.06" x2="361.47" y2="15.06"/>
+      </svg>
+    </div>
+  </div>
+
+  <% if !flash[:email].blank? %>
+    <h3 id="notice">Account created and application submitted!</br>A confirmation email has been
+      sent to <%= flash[:email] %>.
+    </h3>
+  <% end %>
+
+  <% if @application.status.nil? %>
+    <div id="app" class="action-button">
+      <a href="/application/edit">Application: Submitted | Edit Application</a>
+    </div>
+  <% else %>
+    <p id="decision"><%= @decision %></p>
+  <% end %>
+
+<% if @rsvp.nil? and @application.status.present? and @application.status.downcase == "accepted"%>
+  <div id="rsvp" class="action-button">
+    <a href="/rsvp">RSVP</a>
+  </div>
+<% elsif @rsvp.present? %>
+  <p id="rsvp-text">You've also submitted your RSVP, so you're all set!</p>
+<% end %>
+
+<% if @application.status.nil? %>
+  <div id="group-wrapper">
+    <% if @batch.blank? %>
+      <p id="group-apply-single">We're considering you as a single applicant. Want to be considered with friends?
+      </p>
+
+      <div class="form-wrapper flex wrap-row align-center space-between">
+      <%= form_tag "/batch/create", :id =>"get-token", :remote => true, :authenticity_token => true %>
+        <%= submit_tag "Get a token" %>
+      </form>
+
+      <%= form_tag "/batch/update", :id => "update-token", :remote => true, :authenticity_token => true %>
+        <%= text_field(:batch, :token, :id => "group-update", :value => nil, :placeholder => 'Enter a group token') %>
+      </form>
+    </div>
+    <% else %>
+      <p id="group-apply-share">This is your group token: <strong><%= @batch.token %></strong>, share it with your friends to be considered together!</p>
+      <% if @batch.hackers.count == 0%>
+        <p id="group-apply">We're considering you in a group application but you're the only one in your group.</p>
+      <% else %>
+        <p id="group-apply">We're considering you in a group application with <%= @batch.hackers.to_sentence %>.</p>
+      <% end %>
+      <div class="form-wrapper flex wrap-row align-center center">
+        <%= form_tag "/batch/destroy", :id =>"leave-group" %>
+          <%= hidden_field(:batch, :token, :value => @batch.token)%>
+          <%= submit_tag "Leave group" %>
+        </form>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+<div class="flex wrap-column" style="float: right" id="account-wrap">
+  <a href="/users/password/change">Change Password</a>
+  <a href="#" id="destroy-account" data-user="<%= User.current_user.id %>">Delete Account</a>
+</div>
+</section>

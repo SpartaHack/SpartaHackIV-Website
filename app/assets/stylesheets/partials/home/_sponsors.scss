@@ -1,0 +1,199 @@
+#sponsors {
+  font-family: "Lato-Light";
+  padding-bottom: 150px;
+
+  #sponsor-description {
+    font-family: "Lato-Light";
+    font-size: 1.2em;
+    line-height: 2;
+    color: $dark-blue;
+    @media (max-width: 550px) {
+      font-size: 0.9em;
+    }
+    &.dark {
+      color: $light-blue;
+    }
+  }
+
+  #current-sponsors {
+    margin-top: 75px;
+    @media screen and (min-width: 710px) {
+      max-width: 60vw;
+    }
+
+    #title {
+      margin-bottom: 25px;
+      margin-top: 0;
+      font-size: 1.5em;
+      font-weight: 100;
+      color: $dark-blue;
+    }
+  }
+
+  #interested {
+    margin-top: 25px;
+    color: $dark-blue;
+    @media (max-width: 550px) {
+      font-size: 0.9em;
+      margin-top: 15px;
+    }
+  }
+
+  #sponsorship-info {
+    text-transform: uppercase;
+    margin-top: 100px;
+    color: $dark-blue;
+    @media (max-width: 550px) {
+      font-size: 0.9em;
+    }
+    @media (max-width: 950px) {
+      flex-direction: column;
+      margin-top: 40px;
+    }
+    @media screen and (min-width: 710px) {
+      width: 60vw;
+    }
+
+    #prospectus,
+    #tiers {
+      padding: 25px 0;
+      width: 250px;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      margin-bottom: 75px;
+      @media (max-width: 550px) {
+        width: 200px;
+        margin-bottom: 40px;
+      }
+
+      a {
+        &::after {
+          display: none;
+          border-bottom: none;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  #past-events {
+    color: $dark-blue;
+    line-height: 3;
+    @media (min-width: 341px) and (max-width: 550px) {
+      margin-top: 40px;
+      line-height: 2;
+
+      #past-events-links {
+        font-size: 0.9em;
+      }
+    }
+    @media (max-width: 340px) {
+      margin-top: 40px;
+      line-height: 2;
+
+      #past-events-links {
+        font-size: 0.81em;
+      }
+    }
+  }
+
+  .media-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 75px;
+
+    a:after {
+      display: none;
+    }
+    @media screen and (max-width: 550px) {
+      flex-direction: column;
+      -webkit-flex-direction: column;
+    }
+  }
+
+  .partner {
+    width: 150px;
+    height: 70px;
+    margin: 15px 25px;
+
+    .logo-sponsor {
+      max-width: 150px;
+      min-width: 150px;
+      max-height: 70px;
+      height: auto;
+      width: 100%;
+      margin-bottom: 0;
+    }
+    @media (max-width: 550px) {
+      margin: 5px 15px;
+    }
+  }
+
+  .trainee {
+    width: 250px;
+    height: 100px;
+    margin: 15px 25px;
+    position: relative;
+
+    #auto-owners,
+    .logo-sponsor {
+      max-width: 250px;
+      min-width: 250px;
+      max-height: 100px;
+      height: auto;
+      width: 100%;
+      @media (max-width: 550px) {
+        min-width: 160px;
+        max-width: 200px;
+        height: auto;
+      }
+    }
+  }
+
+  .warrior {
+    width: 300px;
+    height: 150px;
+    margin: 15px 25px;
+
+    .logo-sponsor {
+      width: 300px;
+      min-width: 275px;
+      max-height: 150px;
+      height: auto;
+      width: 100%;
+    }
+    @media (max-width: 550px) {
+      max-width: 260px;
+
+      .logo-sponsor {
+        max-width: 260px;
+        height: auto;
+        margin: 0 0 25px;
+      }
+    }
+  }
+
+  .commander {
+    width: 500px;
+    max-width: 100%;
+    margin: 15px 25px;
+    @media (max-width: 550px) {
+      margin: 15px 0;
+    }
+
+    .logo-sponsor {
+      max-width: 500px;
+      min-width: 500px;
+      height: auto;
+      @media (max-width: 550px) {
+        min-width: 300px;
+        max-width: 325px;
+        height: auto;
+        margin: 0 0 25px;
+      }
+    }
+  }
+}

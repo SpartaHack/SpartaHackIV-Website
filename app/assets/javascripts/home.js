@@ -76,16 +76,16 @@ window.onload = function() {
   ////////////////////////////////////////////////////
   // email
   ///////////////////////////////////////////////////
-  var emailForm = document.getElementById("notify-email-input");
-  emailForm.addEventListener("focus", function() {
-    this.setAttribute("placeholder", "Email");
-    this.nextElementSibling.classList.remove("hide");
-  });
-
-  emailForm.addEventListener("blur", function() {
-    this.setAttribute("placeholder", "SIGN UP");
-    this.nextElementSibling.classList.add("hide");
-  });
+  // var emailForm = document.getElementById("notify-email-input");
+  // emailForm.addEventListener("focus", function() {
+  //   this.setAttribute("placeholder", "Email");
+  //   this.nextElementSibling.classList.remove("hide");
+  // });
+  //
+  // emailForm.addEventListener("blur", function() {
+  //   this.setAttribute("placeholder", "SIGN UP");
+  //   this.nextElementSibling.classList.add("hide");
+  // });
 
   checkAnimation(document.getElementsByClassName('spartahack-title-animation')[0]);
   checkAnimation(document.getElementById('event-date-animation'));

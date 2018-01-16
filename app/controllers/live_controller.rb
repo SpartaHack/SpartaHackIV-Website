@@ -67,9 +67,9 @@ class LiveController < ApplicationController
       schedule.each do |s|
         day = s["time"].in_time_zone("Eastern Time (US & Canada)").strftime("%e")
         time = s["time"].in_time_zone("Eastern Time (US & Canada)").strftime("%H:%M")
-        if day.to_i == 20
+        if day.to_i == 19
           @schedule[0][1].push([time,s["title"],s["description"],s["location"]])
-        elsif day.to_i == 21
+        elsif day.to_i == 20
           @schedule[1][1].push([time,s["title"],s["description"],s["location"]])
         else
           @schedule[2][1].push([time,s["title"],s["description"],s["location"]])

@@ -145,27 +145,24 @@ $(document).ready(function() {
 
   function initializeClock(id, endtime) {
     var clock = document.getElementById(id);
-    var daysSpan = clock.querySelector('.days');
-    var hoursSpan = clock.querySelector('.hours');
-    var minutesSpan = clock.querySelector('.minutes');
-    var secondsSpan = clock.querySelector('.seconds');
 
     function updateClock() {
       var t = getTimeRemaining(endtime);
 
       var d = new Date();
       var n = d.getTime();
-
-      if ((n >= 1485104400000) && (confetti_count == 0)) {
+      if ((n >= 1516554000000) && (confetti_count == 0)) {
         StartConfetti();
         confetti_count = 1;
         $("#clockdiv p").html("Hacking has ended!");
         $("#clockdiv div").remove();
-      } else if (n >= 1484974800000) {
-        $("#clockdiv p").html("Hacking ends in");
-        var deadline = new Date(1485104400000);
+      } else if (n >= 1516079393000) {  
+        var deadline = new Date(1516554000000);
         t = getTimeRemaining(deadline);
-
+        clock.innerHTML = "Hacking ends in <br />" + t.days + " Days, "
+        + ('0' + t.hours).slice(-2) + " Hours, "
+        + ('0' + t.minutes).slice(-2) + " Minutes, "
+        + ('0' + t.seconds).slice(-2) + " Seconds ";
       }
 
 
@@ -181,11 +178,6 @@ $(document).ready(function() {
         $("#clockdiv div.smalltext").attr("style", "");
       }
 
-      daysSpan.innerHTML = t.days;
-      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
       if (t.total <= 0) {
         clearInterval(timeinterval);
       }
@@ -195,7 +187,7 @@ $(document).ready(function() {
     var timeinterval = setInterval(updateClock, 1000);
   }
 
-  var deadline = new Date(1484974800000);
+  var deadline = new Date(1516554000000);
   initializeClock('clockdiv', deadline);
 
   function refreshAnnouncements() {

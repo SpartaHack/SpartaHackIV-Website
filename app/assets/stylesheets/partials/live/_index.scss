@@ -62,7 +62,7 @@
 
   #clockdiv {
     font-family: 'Lato-Light';
-    color: #fff;
+    //color: #fff;
     display: inline-block;
     font-weight: 100;
     text-align: center;
@@ -112,10 +112,10 @@
     line-height: 40px;
     width: 100%;
     text-align: left;
-    font-family: ''Scout-Thin'';
+    font-family: sans-serif;
     font-weight: 100;
     padding-left: 10px;
-    background: linear-gradient(to bottom, #F9E1A3, $medium-blue);
+    background: linear-gradient(to bottom, $medium-blue, $dark-blue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 

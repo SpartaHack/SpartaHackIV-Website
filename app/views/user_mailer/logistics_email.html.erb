@@ -103,7 +103,7 @@
 	       /*margin-left: 1em;*/
          color: #1f4051;
          opacity: .8;
-	       list-style-image: url("https://17.spartahack.com/assets/diamond-w-shadow-4c3fbce6475192408710dec21d88dad2da7004e7a4a9a00e673d608dab81ce07.svg");
+	       list-style-image: url("https://18.spartahack.com/assets/diamond-w-shadow-4095be08565d407cbb892082571b4699a1085bfd15f73cca6b6350222ad7c37d.svg");
 	     }
 
        .a-wrap {
@@ -111,7 +111,8 @@
        }
 
        a {
-         color: #cc7a00;
+         color: #1f4051;
+         font-weight: bold;
          position: relative;
          text-decoration: none;
          padding-bottom: 7px;
@@ -152,6 +153,15 @@
          margin: 100px auto;
          margin-top: 0px;
          background: white;
+         width: 277px;
+         padding-top: 10px;
+         padding-bottom: 10px;
+       }
+
+       #footer-wrap {
+         margin: 100px auto;
+         margin-top: 0px;
+         background: none;
          width: 277px;
          padding-top: 10px;
          padding-bottom: 10px;
@@ -210,7 +220,7 @@ Password:     SpartansWill
 				<li class="main-li">If you arrive after that, you can check in at the Help Desk.</li>
 				<li class="main-li">You must have a <strong>completed RSVP</strong> to check in.</li>
 				<li class="main-li">Hate long lines? Have your QR code loaded on your phone for one-step check-in.</li>
-				<li class="main-li">You can also join our slack channel <a href="https://join.slack.com/t/spartahackiv/shared_invite/enQtMjk5MzU4NDMyMjI1LTY3MTU4ZmQzOGJhY2M2ZDQ1ODEyYjRiNDIwMTc5Njk5YjUxMzYwODlkZjM4MWJiNzJkMGUwZjVmMWYzZWIwNDY">HERE</a>, and recieve notifications throughout the event!</li>
+				<li class="main-li">You can also join our slack channel <a href="https://join.slack.com/t/spartahackiv/shared_invite/enQtMjk5MzU4NDMyMjI1LTY3MTU4ZmQzOGJhY2M2ZDQ1ODEyYjRiNDIwMTc5Njk5YjUxMzYwODlkZjM4MWJiNzJkMGUwZjVmMWYzZWIwNDY">HERE</a>, and receive notifications throughout the event!</li>
 				<li class="main-li"><strong>Minors: if you are under 18 years of age, we cannot check you in without signed copies of these three documents:</strong></li>
 				<li style="list-style: none; display: inline; ">
 					<ul class="indent">
@@ -246,13 +256,14 @@ Password:     SpartansWill
         </strong>
       </h5>
 
-      
+
       <p class="notice" id="second">If you have any questions, please check out the FAQ section of <a href="https://live.spartahack.com">live.spartahack.com</a> or email <a href="mailto:hello@spartahack.com">hello@spartahack.com</a>.</p>
       <p id="note">See you soon! 😊</p>
       <p id="from">- The SpartaHack Team</p>
 		</div>
-    <%= image_tag attachments['footer.png'].url, :id => 'footer' %>
+    <div id="footer-wrap">
+      <%= image_tag attachments['footer.png'].url, :id => 'footer' %>
+    </div>
 	</div>
 </body>
 </html>
-

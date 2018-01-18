@@ -32,7 +32,7 @@ class UserMailer < ApplicationMailer
 
     attachments.inline['qr.png'] = File.read("#{Rails.root}/app/assets/qr/qr-#{id}.png")
     attachments.inline['banner.png'] = File.read("#{Rails.root}/app/assets/images/logo/banner.png")
-    attachments.inline['footer.png'] = File.read("#{Rails.root}/app/assets/images/favicons/push-192x192.png")
+    attachments.inline['footer.png'] = File.read("#{Rails.root}/app/assets/images/favicons/mstile-150x150.png")
 
     mail :to => email, :subject => "SpartaHack IV Logistics"
   end

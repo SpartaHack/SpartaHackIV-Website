@@ -2,6 +2,20 @@ class AdminController < ApplicationController
   before_action :check_login
   require "pp"
 
+  def logistics_email
+    users = User.all
+
+    users.each do |user|
+      if !user.rsvp.present? || user.rsvp.attending.downcase != 'no'
+        UserMailer.logistics_email(
+          user.first_name,
+          user.email,
+          user.id
+        ).deliver_now
+      end
+    end
+  end
+
   def dashboard
     @user = User.current_user
   end

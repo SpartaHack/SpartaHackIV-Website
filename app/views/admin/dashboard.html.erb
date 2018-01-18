@@ -64,6 +64,9 @@
       <div class="hvr-underline-from-left full" id="announcements">
         <a href=""><div class="topic" >Announcements</div></a>
       </div>
+      <div class="hvr-underline-from-left full" id="send_logistics">
+        <a href="#"><div class="topic" >Send Logistics Email</div></a>
+      </div>
     <% end %>
       <div class="hvr-underline-from-left full">
         <a href="/admin/statistics"><div class="topic" >Statistics</div></a>
@@ -138,5 +141,13 @@
        $("#popup-wrapper").css("display", "flex");
     });
 
+    $('#send_logistics').click(function(){
+      $.ajax({
+        url: '/admin/logistics',
+        type: 'post',
+      }).done(function() {
+        console.log('done');
+      });
+    });
   }
 <% end %>

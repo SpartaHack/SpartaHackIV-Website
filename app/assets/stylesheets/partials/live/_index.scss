@@ -353,7 +353,7 @@
     #wrap-announce {
       display: flex;
       flex-direction: row;
-      overflow-x: auto;
+      overflow-x: hidden;
       width: 100%;
       border-left: 1px solid $light-blue;
       border-right: 1px solid $light-blue;

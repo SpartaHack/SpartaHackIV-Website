@@ -7,11 +7,15 @@ class AdminController < ApplicationController
 
     users.each do |user|
       if !user.rsvp.present? || user.rsvp.attending.downcase != 'no'
-        UserMailer.logistics_email(
-          user.first_name,
-          user.email,
-          user.id
-        ).deliver_now
+        begin
+          UserMailer.logistics_email(
+            user.first_name,
+            user.email,
+            user.id
+          ).deliver_now
+        rescue
+          logger.debug "Error on logistics send. User ID: #{user.id}"
+        end
       end
     end
   end

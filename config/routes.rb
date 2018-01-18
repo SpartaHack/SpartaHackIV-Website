@@ -82,6 +82,8 @@ Rails.application.routes.draw do
   resources :user
   get '/dashboard', to: 'user#dashboard'
 
+  post '/admin/logistics', to: 'admin#logistics_email'
+
   get '/admin', to: 'admin#dashboard'
   get '/admin/dashboard', to: 'admin#dashboard'
   post '/admin/dashboard/stats', to: 'admin#dashboard_stats'

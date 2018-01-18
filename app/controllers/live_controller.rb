@@ -5,7 +5,7 @@ class LiveController < ApplicationController
   require 'pp'
 
   def index
-    redirect_to '/' and return
+    #redirect_to '/' and return
     unless File.exist?("app/assets/pdfs/SpartaHack-Map.pdf")
       open('app/assets/pdfs/SpartaHack-Map.pdf', 'wb') do |file|
         file << open('https://api.spartahack.com/map').read
@@ -67,9 +67,9 @@ class LiveController < ApplicationController
       schedule.each do |s|
         day = s["time"].in_time_zone("Eastern Time (US & Canada)").strftime("%e")
         time = s["time"].in_time_zone("Eastern Time (US & Canada)").strftime("%H:%M")
-        if day.to_i == 20
+        if day.to_i == 19
           @schedule[0][1].push([time,s["title"],s["description"],s["location"]])
-        elsif day.to_i == 21
+        elsif day.to_i == 20
           @schedule[1][1].push([time,s["title"],s["description"],s["location"]])
         else
           @schedule[2][1].push([time,s["title"],s["description"],s["location"]])

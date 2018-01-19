@@ -10,6 +10,9 @@ $(document).ready(function() {
 
   var last_p = 1;
 
+  if (darkTheme) {
+    $("article").addClass("dark");
+        }
   $('article').click(function() {
     current = $(this);
     $("article").removeClass("active-q");

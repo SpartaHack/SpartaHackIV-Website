@@ -724,7 +724,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: $medium-blue;
+            color: black;
             z-index: 10;
             font-family: 'Lato-Light';
             font-weight: 100;
@@ -803,7 +803,7 @@
           font-size: 100%;
           font-family: 'Lato-Light';
           font-weight: 100;
-          color: $medium-blue;
+          color: black;
           margin: 0;
           z-index: 10;
           line-height: 220%;
@@ -1229,10 +1229,10 @@
   }
 
   a {
-    color: $light-blue;
+    color: $dark-blue;
 
     &:visited {
-      color: $light-blue;
+      color: $medium-blue;
     }
   }
 }

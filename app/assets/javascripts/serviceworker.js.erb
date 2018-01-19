@@ -61,7 +61,7 @@ function onFetch(event) {
 
 function onPush(event) {
   event.waitUntil(
-     fetch("https://elephant.spartahack.com/push", {headers:{
+     fetch("https://18.spartahack.com/push", {headers:{
       'Access-Control-Allow-Origin':'*',
       'Access-Control-Allow-Methods': 'DELETE, HEAD, GET, OPTIONS, POST, PUT',
       'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description',
@@ -83,7 +83,7 @@ function onPush(event) {
 
          var title = data.title;
          var message = data.description;
-         var icon = '<%= image_path "favicons/mstile-150x150.png"%>';
+         var icon = '<%= image_path "favicons/android-chrome-144x144.png"%>';
          var notificationTag = 'simple-push-notification';
 
          return self.registration.showNotification(title, {
@@ -97,7 +97,7 @@ function onPush(event) {
 
        var title = 'An error occurred';
        var message = 'We were unable to get the information for this push message';
-       var icon = '<%= image_path "favicons/mstile-150x150.png"%>';
+       var icon = '<%= image_path "favicons/android-chrome-144x144.png"%>';
        var notificationTag = 'notification-error';
        return self.registration.showNotification(title, {
            body: message,
